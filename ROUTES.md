@@ -1,5 +1,5 @@
 # Routes
-
+https://docs.google.com/drawings/d/1aX2_-uw0F1DmUnUbh0XM9_UThJbE17eQzKSNs7T1E-0/edit
 ## GET
 
 / - Home page - 
@@ -14,18 +14,12 @@
 
 then user is redirected to 
 
-/campaigns
+/mycampaigns
     - button to create new campaigns    
     leads to 
         /dashboard/campaigns/new - Where the users can create a new campaign 
             -name
             -brief description
-
-            /dashboard/campaign/add - Where the users can create a new npc
-            -Name
-            -alignment 
-            -hp 
-            -description
 
     - see all campaigns
     when user clicks on a campaign
