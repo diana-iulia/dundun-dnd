@@ -60,3 +60,4 @@ super secret special npcs
 worlds (sets background img) 
 campaign description
 notepad functionality 
+see all npcs?

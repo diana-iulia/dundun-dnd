@@ -1,4 +1,4 @@
-const sequelize = require('../../flashcard/config/connection');
+const sequelize = require('../../dundun-dnd/config/connection');
 const { User } = require('../models');
 
 const userData = require('./userData.json');
