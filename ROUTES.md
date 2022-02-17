@@ -17,15 +17,15 @@ then user is redirected to
 /mycampaigns
     - button to create new campaigns    
     leads to 
-        /dashboard/campaigns/new - Where the users can create a new campaign 
+        /campaigns/new - Where the users can create a new campaign 
             -name
             -brief description
 
     - see all campaigns
     when user clicks on a campaign
-        /dashboard/campaign/:id
+        /campaign/:id
 
-        /dashboard/campaign/npcs - Where the users can create a new npc
+        /campaign/:id/add - Where the users can create a new npc
             -Name
             -alignment 
             -hp 
