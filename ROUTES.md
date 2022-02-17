@@ -1,27 +1,31 @@
 # Routes
-
+https://docs.google.com/drawings/d/1aX2_-uw0F1DmUnUbh0XM9_UThJbE17eQzKSNs7T1E-0/edit
 ## GET
 
-/ - Home page - Introduction to app 
-    >LOGIN/LOGOUT
+/ - Home page - 
+    >Introduction to app (click to disappear)
     >demo video clip 
-    >
+    >navbar with login
 
-![](./photos/homepage.png)
+    ![](./photos/homepage.png)
 
-/login - Where the user logs in
+/login 
+    - Where the user can log in or create an account
 
-/register - Where the user creates an account
+then user is redirected to 
 
-/dashboard
-    - Where the user can see their characters and campaigns
-    - Where the user can create a new campaign
+/mycampaigns
+    - button to create new campaigns    
+    leads to 
+        /campaigns/new - Where the users can create a new campaign 
+            -name
+            -brief description
 
-        /dashboard/campaign - Where the users can create a new campaign 
-        -name
-        -brief description
+    - see all campaigns
+    when user clicks on a campaign
+        /campaign/:id
 
-            /dashboard/ - Where the users can create a new npc
+        /campaign/:id/add - Where the users can create a new npc
             -Name
             -alignment 
             -hp 
