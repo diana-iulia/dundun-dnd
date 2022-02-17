@@ -1,5 +1,10 @@
-const sequelize = require('../../dundun-dnd/config/connection');
+const sequelize = require('../config/connection');
+
 const { User } = require('../models');
+const seedNpc = require('./npcData');
+const seedCampaign = require('./campaignData');
+const seedOrg = require('./orgData');
+const seedLocation = require('./locationData');
 
 const userData = require('./userData.json');
 
@@ -27,6 +32,10 @@ const seedDatabase = async () => {
   //     user_id: users[Math.floor(Math.random() * users.length)].id,
   //   });
   // }
+  await seedCampaign();
+  await seedNpc();
+  await seedOrg();
+  await seedLocation();
 
   process.exit(0);
 };
