@@ -25,6 +25,7 @@ Npc.belongsTo(Campaign, {
 
 Campaign.hasMany(Location, {
     foreignKey: 'campaign_id',
+    onDelete: "CASCADE"
 });
 
 Location.belongsTo(Campaign, {
@@ -33,6 +34,7 @@ Location.belongsTo(Campaign, {
 
 Campaign.hasMany(Organization, {
     foreignKey: 'campaign_id',
+    onDelete: "CASCADE"
 });
 
 Organization.belongsTo(Campaign, {
