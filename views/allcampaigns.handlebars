@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../css/reset.css" rel="stylesheet">
+    <link href="../css/campaign-page.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IM+Fell+Double+Pica+SC&family=IM+Fell+English+SC&family=Kings&family=Libre+Baskerville&family=MedievalSharp&family=UnifrakturCook:wght@700&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+
+    <title>Your Campaigns</title>
+</head>
+
+<body>
+    <div class="header">
+        <h1 class="campaignHeader">{{USERNAME PLACEHOLDER}}'s Campaigns</h1>
+    </div>
+
+    <section class="bookshelf-left">
+        <div class="torch-left"></div>
+        <div class="sorcerer"></div>
+    </section>
+    <section class="bookshelf-right">
+        <div class="torch-right"></div>
+        <div class="wizard"></div>
+    </section>
+
+    <div class="campaignSection">
+        
+        <div class="bookshelf">
+            
+            <div class="campaignCRUD">
+                <div class="addCampaign">
+                    <div class="addBookHeader">Create Campaign</div>
+                    <div class="campaignAddIcon"></div>
+                </div>
+                <div class="removeCampaign">
+                    <div class="removeBookHeader">Destroy Campaign</div>
+                    <div class="campaignRemoveIcon"></div>
+                </div>
+            </div>
+
+            <div class="allBooks">{{ALL CAMPAIGNS}}</div>
+        </div>
+    </div>
+
+</body>
+<script src="../js/campaign-page.js"></script>
+</html>

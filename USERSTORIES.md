@@ -61,3 +61,4 @@ worlds (sets background img)
 campaign description
 notepad functionality 
 see all npcs?
+all cards are visible from campaign page, flip book to see them all 
