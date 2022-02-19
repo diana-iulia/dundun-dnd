@@ -1,7 +1,4 @@
-* {
-  font-family: 'MedievalSharp', cursive;
 
-}
 
 html {
   height: 100%;
@@ -14,7 +11,7 @@ body {
     justify-content: center;
     background-image: url('../../background-images/npc-page/light-weapons-back.jpg');
     background-position: center;
-    background-size: cover;
+    background-size: 75vw;
     width: 100%;
     height: 100%;
 }
@@ -49,6 +46,8 @@ body {
     z-index: 9999;
     display: flex;
     align-items: center;
+    font-family: 'IM Fell Double Pica SC', serif;
+
   }
 
   .column {
@@ -158,7 +157,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     /* flex-direction: column; */
-    background: url('../../background-images/npc-page/gryffyn-m-O8pEyjTnI7U-unsplash.jpg');
+    background: url('../../background-images/npc-page/gryffyn-m-O8pEyjTnI7U-unsplash.png');
     box-shadow: 0px 0px 15px 12px #000000;
     align-items: center;
     justify-content: center;
@@ -300,12 +299,62 @@ body {
   }
 
   .cardFrontBackground {
-    background: url('../../background-images/npc-page/dark-weapons-back.jpg');
+    background: url('../../background-images/npc-page/card-back.png');
     background-size: cover;
     background-repeat: no-repeat;
     width: 100%;
-    height: 100.5%;
+    height: 100%;
     background-position: center;
+    display: flex;
+    justify-content: center;
+  }
+
+  .npcIcon {
+    width: 47.8%;
+    aspect-ratio: 1;
+    position: absolute;
+    overflow: hidden;
+    /* background-color: red; */
+    box-shadow: inset 0px 0px 7.5px white,
+    0px 0px 5px white;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    transform: rotate(45deg);
+    top: 18.37%;
+  }
+
+  .knight {
+    width: 100%;
+    /* height: 100px; */
+    /* bottom: 0; */
+    /* aspect-ratio: 1; */
+    /* flex: none; */
+    position: fixed;
+    bottom: -12.5%;
+    /* left: 50%; */
+    justify-self: center;
+    transform: rotate(-45deg);
+    margin-left: -40%;
+    /* align-self: center; */
+    -webkit-filter: drop-shadow(0px 0px 5px rgb(255, 255, 255));
+    filter:         drop-shadow(0px 0px 5px rgb(255, 255, 255)); 
+  }
+
+  .npcName {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 78%;
+    height: 12.25%;
+    /* background-color: red; */
+    bottom: 12.7%;
+    box-shadow: inset 0px 0px 2.5px white,
+    0px 0px 5px white;
+    font-family: 'Libre Baskerville', serif;
+    color: #D8D1C7;
+    line-height: 1;
   }
   
   .card-front, .card-back {
@@ -327,21 +376,6 @@ body {
     justify-content: center;
   }
   
-  .knight {
-    width: 90%;
-    /* height: 100px; */
-    /* bottom: 0; */
-    /* aspect-ratio: 1; */
-    /* flex: none; */
-    position: absolute;
-    bottom: 0%;
-    /* left: 50%; */
-    justify-self: center;
-    /* margin-left: -25%; */
-    align-self: center;
-    -webkit-filter: drop-shadow(0px 0px 10px rgb(0, 0, 0));
-    filter:         drop-shadow(0px 0px 10px rgb(0, 0, 0)); 
-  }
 
   /* .one {
    background-image: url('/npc-background.jpg');

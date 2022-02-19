@@ -1,0 +1,213 @@
+::-webkit-scrollbar {
+    width: 1em;
+    height: 1rem;
+}
+
+::-webkit-scrollbar-track {
+    background: #2c4b2c;
+    /* backdrop-filter: blur(1rem); */
+    /* border: 2px solid var(--softwhite); */
+    margin-top: auto;
+    /* margin-right: 50px; */
+    /* border-radius: 100vh; */
+}
+
+::-webkit-scrollbar-track:hover {
+    box-shadow: inset 0px 0px 10px #909090;
+    cursor: pointer;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #579e72;
+    border: 2px solid #909090;
+    /* border-radius: 100vh; */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    box-shadow: inset 0px 0px 5px var(--blueGlow);
+    cursor: pointer;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.backgroundMain {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: fixed;
+}
+
+.behindStars {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background-color: black;
+    z-index: -10;
+}
+
+.stars {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: -9;
+}
+
+.moon {
+    width: max(25%, 280px);
+    aspect-ratio: 1;
+    position: fixed;
+    top: 5%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -8;
+    animation: moonrise 5s ease-in-out;
+}
+
+@keyframes moonrise {
+    0% {
+        top: 100%;
+    }
+    100% {
+        top: 5%;
+    }
+}
+
+.introHeader {
+    color: white;
+    font-size: 56px;
+    /* margin-top: 15px; */
+    font-family: 'IM Fell Double Pica SC', serif;
+}
+
+.sword {
+    background-image: url('../../background-images/campaign-page/sword-no-flame.png');
+    bottom: 0vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transform: rotate(0deg);
+    width: min(275px, 25vw);
+    aspect-ratio: 1;
+    position: absolute;
+    animation: swordShake 500ms infinite;
+}
+
+@keyframes swordShake {
+    0% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(-1deg);
+    }
+    50% {
+        transform: rotate(1deg);
+    }
+    75% {
+        transform: rotate(-1deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+.SWORD {
+    background-image: url('../../background-images/campaign-page/sword-flame.png');
+    bottom: 22.5vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transform: rotate(180deg);
+    width: min(275px, 25vw);
+    aspect-ratio: 1;
+    position: absolute;
+    /* top: 55vh; */
+    animation: swordpull 8s ease-in-out, swordHover 8s infinite;
+    animation-delay: 0s, 6s;
+}
+
+@keyframes swordpull {
+    0% {
+        background-image: url('../../background-images/campaign-page/sword-no-flame.png');
+        transform: rotate(0deg);
+        bottom: 0vh;
+    }
+    25% {
+        -webkit-filter: drop-shadow(0px 5px 15px rgb(59, 212, 205));
+        filter:         drop-shadow(0px 5px 15px rgb(59, 212, 205));
+        bottom: 22.5vh;
+    }
+    26% {
+        transform: rotate(0deg);
+    }
+    55% {
+        bottom: 22.5vh;
+        transform: rotate(180deg);
+        background-image: url('../../background-images/campaign-page/sword-no-flame.png');
+    }
+    65% {
+        background-image: url('../../background-images/campaign-page/sword-flame.png');
+        transform: rotate(180deg); 
+    }
+    70% {
+        -webkit-filter: drop-shadow(0px 12px 5px rgb(238, 61, 16));
+        filter:         drop-shadow(0px 12px 5px rgb(238, 61, 16));
+    }
+    80% {
+        -webkit-filter: drop-shadow(0px 25px 10px rgb(238, 61, 16));
+        filter:         drop-shadow(0px 25px 10px rgb(238, 61, 16)); 
+        transform: rotate(180deg); 
+    }
+    90% {
+        -webkit-filter: drop-shadow(0px 25px 5px rgb(238, 61, 16));
+        filter:         drop-shadow(0px 25px 5px rgb(238, 61, 16)); 
+    }
+    100% {
+        transform: rotate(180deg); 
+        background-image: url('../../background-images/campaign-page/sword-flame.png');
+        bottom: 22.5vh;
+        -webkit-filter: drop-shadow(0px 25px 5px rgb(238, 61, 16));
+        filter:         drop-shadow(0px 25px 5px rgb(238, 61, 16)); 
+    }
+}
+
+@keyframes swordHover {
+    0% {
+        transform: rotate(180deg) translateY(0px); 
+        -webkit-filter: drop-shadow(0px 25px 5px rgb(238, 61, 16));
+        filter:         drop-shadow(0px 25px 5px rgb(238, 61, 16));
+    }
+    25% {
+        transform: rotate(180deg) translateY(5px);
+        -webkit-filter: drop-shadow(0px 25px 10px rgb(238, 61, 16));
+        filter:         drop-shadow(0px 25px 10px rgb(238, 61, 16));
+    }
+    50% {
+        transform: rotate(180deg) translateY(-5px); 
+        -webkit-filter: drop-shadow(0px 25px 5px rgb(238, 61, 16));
+        filter:         drop-shadow(0px 25px 5px rgb(238, 61, 16));
+    }
+    75% {
+        transform: rotate(180deg) translateY(5px);
+        -webkit-filter: drop-shadow(0px 25px 10px rgb(238, 61, 16));
+        filter:         drop-shadow(0px 25px 10px rgb(238, 61, 16));
+    }
+    100% {
+        transform: rotate(180deg) translateY(0px); 
+        -webkit-filter: drop-shadow(0px 25px 5px rgb(238, 61, 16));
+        filter:         drop-shadow(0px 25px 5px rgb(238, 61, 16));
+    }
+}
+
+.rock {
+    background-image: url('../../background-images/campaign-page/sword-rock.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: min(300px, 28vw);
+    aspect-ratio: 1.1;
+    position: absolute;
+    opacity: 100%;
+    bottom: 0%;
+    /* animation: rockstart 10s; */
+}
