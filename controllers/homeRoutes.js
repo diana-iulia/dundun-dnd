@@ -31,7 +31,7 @@ router.get('/login', (req, res) => {
 // Use withAuth middleware to prevent access to route
 router.get('/mycampaigns', async (req, res) => {
   try {
-    
+    /*
     let test = 1;
 
     console.log("test " + test++);
@@ -45,7 +45,7 @@ router.get('/mycampaigns', async (req, res) => {
 
     console.log("test " + test++);
 
-    const user = userData.get({ plain: true });
+    //const user = userData.get({ plain: true });
     
     console.log("test " + test++);
     
@@ -60,7 +60,10 @@ router.get('/mycampaigns', async (req, res) => {
     const campaigns = campaignsData.map((data) => data.get({ plain: true }));
 
     console.log("test " + test++);
+*/
 
+    let user = {name: "suzzy"};
+    let campaigns = 2;
     res.render('allcampaigns', { //TODO: pass in user data and campaigns that belong to user
       user,
       campaigns,
