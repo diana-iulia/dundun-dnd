@@ -7,6 +7,7 @@ const seedOrg = require('./orgData');
 const seedLocation = require('./locationData');
 
 const userData = require('./userData.json');
+const seedUser = require('./userData');
 
 /**
  * Leaving for future reference
