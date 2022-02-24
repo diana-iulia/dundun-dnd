@@ -31,17 +31,23 @@ router.get('/login', (req, res) => {
 // Use withAuth middleware to prevent access to route
 router.get('/mycampaigns', async (req, res) => {
   try {
-    
-    
+    /*
+    let test = 1;
+
+    console.log("test " + test++);
+
+    console.log(req.session.user_id)
     // Find the logged in user based on the session ID
     const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ['password'] },
       // include: [{ model: Project }],
     });
 
+    console.log("test " + test++);
 
-    const user = userData.get({ plain: true });
+    //const user = userData.get({ plain: true });
     
+    console.log("test " + test++);
     
     const campaignsData = await Campaign.findAll({
       where: {
@@ -49,16 +55,22 @@ router.get('/mycampaigns', async (req, res) => {
       }
     });
 
-    
+    console.log("test " + test++);
+
     const campaigns = campaignsData.map((data) => data.get({ plain: true }));
 
+    console.log("test " + test++);
+*/
 
+    let user = {name: "suzzy"};
+    let campaigns = 2;
     res.render('allcampaigns', { //TODO: pass in user data and campaigns that belong to user
       user,
       campaigns,
       logged_in: true
     });
   } catch (err) {
+    console.error(err);
     res.status(500).json(err);
   }
 });
