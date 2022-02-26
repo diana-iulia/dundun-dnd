@@ -62,8 +62,12 @@ router.get('/mycampaigns', async (req, res) => {
     console.log("test " + test++);
 */
 
-    let user = {name: "suzzy"};
-    let campaigns = 2;
+    let user = await (await User.findByPk(1)).toJSON();
+    
+
+    let campaigns = await (await Campaign.findAll({where: { user_id: 1}})).map((e) => e.toJSON());
+    console.log(campaigns);
+
     res.render('allcampaigns', { //TODO: pass in user data and campaigns that belong to user
       user,
       campaigns,
