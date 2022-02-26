@@ -1,13 +1,15 @@
 const router = require('express').Router();
 const { User } = require('../../models');
-
+/*
 router.post('/', async (req, res) => {
   try {
     const userData = await User.create(req.body);
 
+
+    req.session.user_id = userData.id;
+    req.session.logged_in = true;
     req.session.save(() => {
-      req.session.user_id = userData.id;
-      req.session.logged_in = true;
+      
 
       res.status(200).json(userData);
     });
@@ -15,7 +17,7 @@ router.post('/', async (req, res) => {
     res.status(400).json(err);
   }
 });
-
+*/
 router.post('/login', async (req, res) => {
   try {
     const userData = await User.findOne({ where: { email: req.body.email } });
@@ -23,7 +25,7 @@ router.post('/login', async (req, res) => {
     if (!userData) {
       res
         .status(400)
-        .json({ message: 'Incorrect email or password, please try again' });
+        .json({ message: 'Incorrect email or password, please try again  asdfasdfadsfasd' });
       return;
     }
 
@@ -36,11 +38,59 @@ router.post('/login', async (req, res) => {
       return;
     }
 
+    req.session.user_id = userData.id;
+    req.session.logged_in = true;
+
     req.session.save(() => {
-      req.session.user_id = userData.id;
-      req.session.logged_in = true;
+      
       
       res.json({ user: userData, message: 'You are now logged in!' });
+    });
+
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});
+
+router.post('/register', async (req, res) => {
+  try {
+    const userNameTest = await User.findOne({ where: { name: req.body.name } });
+
+    if (userNameTest) {
+      res
+        .status(400)
+        .json({ message: 'Username already in use' });
+      return;
+    }
+    
+    const emailNameTest = await User.findOne({ where: { email: req.body.email } });
+
+    if (emailNameTest) {
+      res
+        .status(400)
+        .json({ message: 'Email already has an account associated with it' });
+      return;
+    }
+
+     User.create({
+      name: req.body.name,
+      email: req.body.email,
+      password: req.body.password
+    },
+    {
+      individualHooks: true,
+      returning: true,
+    });
+
+    const userData = await (await User.findOne({ where: { name: req.body.name } })).toJSON();
+
+    req.session.user_id = userData.id;
+    req.session.logged_in = true;
+
+    req.session.save(() => {
+      
+      
+      res.json({ user: userData, message: 'New account \"' + userData.name + "\" was created" });
     });
 
   } catch (err) {

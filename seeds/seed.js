@@ -6,7 +6,9 @@ const seedCampaign = require('./campaignData');
 const seedOrg = require('./orgData');
 const seedLocation = require('./locationData');
 
-const userData = require('./userData.json');
+//const userData = require('./userData.js');
+const seedUser = require('./userData.js');
+//const seedUser = require('./userData');
 
 /**
  * Leaving for future reference
@@ -17,12 +19,13 @@ const userData = require('./userData.json');
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
 
+/**
   const users = await User.bulkCreate(userData, {
     individualHooks: true,
     returning: true,
   });
 
-  /**
+  
    * Leaving for future reference
    */
 
@@ -32,6 +35,8 @@ const seedDatabase = async () => {
   //     user_id: users[Math.floor(Math.random() * users.length)].id,
   //   });
   // }
+
+  await seedUser();
   await seedCampaign();
   await seedNpc();
   await seedOrg();
