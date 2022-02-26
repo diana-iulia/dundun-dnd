@@ -5,11 +5,7 @@
 
 ::-webkit-scrollbar-track {
     background: #2c4b2c;
-    /* backdrop-filter: blur(1rem); */
-    /* border: 2px solid var(--softwhite); */
     margin-top: auto;
-    /* margin-right: 50px; */
-    /* border-radius: 100vh; */
 }
 
 ::-webkit-scrollbar-track:hover {
@@ -32,6 +28,20 @@ body {
     display: flex;
     justify-content: center;
     overflow: hidden;
+    background-color: rgb(0, 0, 0);
+    align-items: center;
+}
+
+.introAnimation {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    background: transparent;
+}
+
+.introAnimation[data-visible="false"] {
+    display: none;
 }
 
 .backgroundMain {
@@ -60,7 +70,7 @@ body {
     width: max(25%, 280px);
     aspect-ratio: 1;
     position: fixed;
-    top: 5%;
+    top: 10%;
     background-repeat: no-repeat;
     background-size: cover;
     z-index: -8;
@@ -72,14 +82,14 @@ body {
         top: 100%;
     }
     100% {
-        top: 5%;
+        top: 10%;
     }
 }
 
 .introHeader {
     color: white;
-    font-size: 56px;
-    /* margin-top: 15px; */
+    font-size: min(56px, 8vw);
+    margin-top: 5px;
     font-family: 'IM Fell Double Pica SC', serif;
 }
 
@@ -89,7 +99,7 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     transform: rotate(0deg);
-    width: min(275px, 25vw);
+    width: max(200px, 15vw);
     aspect-ratio: 1;
     position: absolute;
     animation: swordShake 500ms infinite;
@@ -119,7 +129,7 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     transform: rotate(180deg);
-    width: min(275px, 25vw);
+    width: max(200px, 15vw);
     aspect-ratio: 1;
     position: absolute;
     /* top: 55vh; */
@@ -204,10 +214,99 @@ body {
     background-image: url('../../background-images/campaign-page/sword-rock.png');
     background-size: cover;
     background-repeat: no-repeat;
-    width: min(300px, 28vw);
+    width: max(220px, 17vw);
     aspect-ratio: 1.1;
     position: absolute;
     opacity: 100%;
     bottom: 0%;
     /* animation: rockstart 10s; */
 }
+
+
+
+
+
+
+
+
+
+.header {
+    width: 100%;
+    height: 120px;
+    background: rgba(0, 0, 0, .55);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    top: 0;
+    box-shadow: 0px 10px 15px #000000;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    font-family: 'IM Fell Double Pica SC', serif;
+  }
+
+  .curtain-top {
+      width: 100%;
+      height: 120px;
+      position: fixed;
+      top: 0;
+      z-index: 99;
+      background-image: url('../../background-images/intro-page/curtain-top.png');
+      background-position: center;
+      background-size: cover;
+  }
+
+  .npcHeader {
+    width: 100%;
+    color: #D8D1C7;
+    font-size: 76px;
+    text-align: center;
+    position: absolute;
+    text-shadow: 0px 0px 5px rgb(0, 0, 0);
+    /* margin-top: 155px; */
+  }
+
+  .curtain-left {
+    position: fixed;
+    width: 50%;
+    height: 100%;
+    top: 0px;
+    left: 0;
+    background-image: url('../../background-images/intro-page/curtain-left.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    z-index: 10;
+  }
+
+  .curtain-right {
+    position: fixed;
+    width: 50%;
+    height: 100%;
+    top: 0px;
+    right: 0;
+    background-image: url('../../background-images/intro-page/curtain-right.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 10;
+  }
+
+  .videoPlacer {
+      width: 100%;
+      height: 100%;
+      top: 120px;
+      position: fixed;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 11;
+  }
+
+  .video-tutorial {
+      position: fixed;
+      top: 35%;
+      width: min(90%, 900px);
+      aspect-ratio: 16 / 9;
+      background-color: #851919;
+      border-radius: 10px;
+  }
