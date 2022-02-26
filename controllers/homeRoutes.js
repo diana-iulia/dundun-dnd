@@ -9,7 +9,7 @@ router.get('/', async (req, res) => {
   try {
 
     // Pass serialized data and session flag into template
-    res.render(' TO DO ADD MY HANLDEBARS FILE ', {
+    res.render('intro', {
       logged_in: req.session.logged_in 
     });
 
