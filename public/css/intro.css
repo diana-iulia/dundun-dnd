@@ -263,6 +263,7 @@ body {
     width: 100%;
     height: 100%;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
 }
@@ -596,7 +597,7 @@ body {
 
 .campaignSection {
     margin-top: 200px;
-    width: 50%;
+    width: min(900px, 90%);
     /* height: 70%; */
     aspect-ratio: 1.5;
     border-radius: 1em;
@@ -617,4 +618,48 @@ body {
     width: min(800px, 90%);
     aspect-ratio: 1.5;
     margin: 25px;
+}
+
+.loginBtns {
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    right: 15px;
+
+    /* margin-bottom: 15px; */
+}
+
+.login, .createAccount {
+    color: #D8D1C7;
+    font-family: 'IM Fell Double Pica SC', serif;
+    font-size: 30px;
+    border-radius: 5px;
+    border: 5px outset #3d3432;
+    padding: 5px;
+    background-color: #0e0e0e;
+    cursor: pointer; 
+    transition: border 2s, background-color 250ms;
+    user-select: none;
+}
+
+.login {
+    width: fit-content;
+    height: fit-content;
+}
+
+.login:hover, .createAccount:hover {
+    background-color: #1a1a1a;
+    border: 5px inset #3d3432;
+}
+
+.login:active, .createAccount:active {
+    transform: translateY(2px);
+}
+
+.createAccount {
+    width: fit-content;
+    height: fit-content;
+    margin-left: 15px;
 }
