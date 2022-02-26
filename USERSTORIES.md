@@ -62,3 +62,4 @@ campaign description
 notepad functionality 
 see all npcs?
 all cards are visible from campaign page, flip book to see them all 
+animation/interactivity with creatures on front page
