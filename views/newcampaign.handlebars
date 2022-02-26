@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../css/reset.css" rel="stylesheet">
+    <link href="../css/campaign-create-page.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IM+Fell+Double+Pica+SC&family=IM+Fell+English+SC&family=Kings&family=Libre+Baskerville&family=MedievalSharp&family=UnifrakturCook:wght@700&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+
+<title>Create Campaign</title>
+</head>
+
+<body>
+    <div class="header">
+        <h1 class="campaignHeader">Your Campaigns</h1>
+    </div>
+
+    <section class="bookshelf-left">
+        <div class="torch-left"></div>
+        <div class="sorcerer"></div>
+    </section>
+    <section class="bookshelf-right">
+        <div class="torch-right"></div>
+        <div class="wizard"></div>
+    </section>
+
+    <div class="campaignSection">
+        <div class="bookshelf">
+            <div class="oldBook">
+                <div class="campaign" data-visible="false">
+                    <div class="back"></div>
+                    <div class="page6 rightPage">
+                        <button class="finish">Finish</button>
+                    </div>
+                    <div class="page5 leftPage">
+                        <form class="bookDesc" data-visible="false">
+                            <h1 class="bookDescHeader" data-visible="false">Describe your campaign!</h1>
+                            <textarea data-visible="false" name="userBookDesc" cols="1" rows="10" class="userBookDesc input"></textarea>
+                          </form> 
+                    </div>
+                    <div class="page4-5"></div>
+                    <div class="page4"></div>
+                    <div class="page3-5"></div>
+                    <div class="page3"></div>
+                    <div class="page2-5"></div>
+                    <div class="page2"></div>
+                    <div class="page1-5"></div>
+                    <div class="page1"></div>
+                    <div class="front">
+                        <div class="bookInfo">
+                            <form class="bookName">
+                                <h1 class="campaignTitle">Title?</h1>
+                                <input class="userCampName input" type="text">
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="nextPage" data-visible="false"></button>
+        </div>
+    </div>
+
+</body>
+<script src="../js/campaign-create-page.js"></script>
+</html>
