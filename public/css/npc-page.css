@@ -163,6 +163,16 @@ body {
     justify-content: center;
   }
 
+  .cardshelf {
+    width: 100%;
+    /* margin-top: 150px; */
+    /* background: ; */
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+
   .cardCRUD {
     width: 100%;
     /* margin-top: 150px; */
@@ -387,7 +397,9 @@ body {
   } */
 
   .card-back {
-    background-color: #143850;
+    background-image: url('../../background-images/npc-page/card-front.png');
+    background-size: contain;
+    background-position: center;
     color: white;
     transform: rotateY(180deg);
     display: flex;
@@ -398,7 +410,59 @@ body {
   .cardBackInfo {
     width: 100%;
     height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-family: 'Libre Baskerville', serif;
+    color: #272624;
   }
+
+  .h1card {
+    position: relative;
+    width: 100%;
+    height: min-content;
+    top: 5%;
+    font-size: 2.25vw;
+    font-weight: 700;
+  }
+
+  .alignmentSection {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Libre Baskerville', serif;
+    color: #272624;
+  }
+
+  .alignHead {
+    margin-top: 20px;
+    font-size: 1.5vw;
+    font-weight: 700;
+    width: 100%;
+  }
+
+  .alignIcon {
+    margin-top: 15px;
+    width: 25%;
+    aspect-ratio: 1;
+    background-color: #121212;
+  }
+
+  .npcHp {
+    font-size: 1vw;
+    font-weight: 700;
+  }
+
+  .npcDesc {
+    width: 85%;
+    line-height: 1.25;
+    height: 40%;
+  }
+
+
 
 
 
