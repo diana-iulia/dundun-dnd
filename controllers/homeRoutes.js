@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const session = require('express-session');
-const { User, Campaign } = require('../models');
+const { User, Campaign, Npc } = require('../models');
 const withAuth = require('../utils/auth');
 
 
@@ -112,7 +112,7 @@ router.get('/campaign/:id', async (req, res) => {
     const campaign = campaignData.get({ plain: true });
 
 
-    const npcData = await Campaign.findAll({
+    const npcData = await Npc.findAll({
       where: {
         campaign_id: req.params.id
       }
@@ -130,7 +130,7 @@ router.get('/campaign/:id', async (req, res) => {
       logged_in: true
     });
   } catch (err) {
-
+    console.error(err);
     res.status(500).json(err);
   }
 });
