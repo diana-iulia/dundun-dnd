@@ -1,32 +1,31 @@
-    {{users.name}}
- {{#each campaign}}
- <div class="card" aria-enabled="false">
-    <div class="card-inner">
-        <div class="card-front">
-            <div class="cardFrontBackground"></div>
-                <div class="npcIcon">
-                    <img src="knight.png" alt="knight" class="knight">
-                </div>
-            <div class="npcName">{{npc.name}}</div>
-        </div>
+{{#each npcs as | npc |}}
+          <div class="card" aria-enabled="false">
+            <div class="card-inner">
+              <div class="card-front">
+                <div class="cardFrontBackground"></div>
+                  <div class="npcIcon">
+                    <img src="/npc-icons/{{npc.filename}}" alt="knight" class="knight">
+                  </div>
+                  <div class="npcName">{{npc.name}}</div>
+              </div>
+              <div class="card-back">
+                <div class="cardBackInfo">
+                  <h1 class="h1card">{{npc.name}}</h1> 
 
-        <div class="card-back">
-            <div class="cardBackInfo">
-                
-            <h1 class="h1card">{{npc.name}}</h1> 
-            <p class="p1card">{{npc.name}}</p>
-                <div class="alignmentSection">
-                    <div class="alignHead">Alignment</div>
+                  <div class="alignmentSection">
+                    <div class="alignHead">{{npc.alignment}}</div>
                     <div class="alignIcon">
                       <!-- alignment img from card creation goes here -->
                     </div>
-                </div>
-                <div class="npcHp">{{npc.hp}}</div>
+                  </div>
+                  <br>
+                  <!-- number they inserted in card creation -->
+                  <div class="npcHp">HP: {{npc.hp}}</div>
                   
                   <div class="npcDesc">{{npc.description}}</div>
-            {{!-- <p class="p2card">Other information</p> --}}
+
+                </div>
+              </div>
             </div>
-        </div>
-    </div>
-</div>
+          </div>
 {{/each}}

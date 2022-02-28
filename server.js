@@ -37,6 +37,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use("/background-images", express.static(path.join(__dirname, 'background-images')));
+app.use("/npc-icons", express.static(path.join(__dirname, 'npc-icons')));
 
 app.use(routes);
 

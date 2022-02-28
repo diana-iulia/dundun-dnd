@@ -263,6 +263,14 @@ body {
     cursor: pointer;
   }
 
+  .allCards {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  }
+
   /* .card:hover {
     box-shadow: ;
   } */
@@ -384,6 +392,7 @@ body {
     display: flex;
     /* align-items: center; */
     justify-content: center;
+   
   }
   
 
@@ -414,6 +423,7 @@ body {
     flex-wrap: wrap;
     justify-content: center;
     font-family: 'Libre Baskerville', serif;
+    font-size: 25%;
     color: #272624;
   }
 
@@ -422,8 +432,8 @@ body {
     width: 100%;
     height: min-content;
     top: 5%;
-    font-size: 2.25vw;
-    font-weight: 700;
+    font-size: .9vw;
+    font-weight: 900;
   }
 
   .alignmentSection {
@@ -439,7 +449,7 @@ body {
 
   .alignHead {
     margin-top: 20px;
-    font-size: 1.5vw;
+    font-size: .8vw;
     font-weight: 700;
     width: 100%;
   }
@@ -460,9 +470,14 @@ body {
     width: 85%;
     line-height: 1.25;
     height: 40%;
+    font-size: .5vh;
+    overflow: hidden;
+    margin-bottom: 2%
   }
 
-
+  /* .cardSelected {
+    font-size: 200%;
+  } */
 
 
 

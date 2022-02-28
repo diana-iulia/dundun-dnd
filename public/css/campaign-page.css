@@ -439,6 +439,18 @@ body {
     margin-top: 10%;
 }
 
+.titleHeader {
+    color: #D8D1C7;
+    font-size: 155%;
+    font-family: 'Kings', cursive;
+    width: 70%;
+    text-align: center;
+    padding-top: 50%;
+    padding-left: 8%;
+    padding-right: 2%;
+    /* flex-wrap: wrap; */
+}
+
 .campaignAddIcon, .campaignRemoveIcon {
     width: 75px;
     aspect-ratio: .85;
@@ -635,6 +647,9 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
+    font-size: 70%;
+    font-family: 'Kings', cursive;
 }
 
 .page6 {
