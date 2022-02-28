@@ -6,6 +6,11 @@ body {
     align-items: center;
 }
 
+a {
+    color: inherit;
+    text-decoration: inherit;
+}
+
 .header {
     width: 100%;
     height: 120px;
