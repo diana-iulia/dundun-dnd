@@ -41,8 +41,6 @@ document.querySelector(".createNPC").addEventListener("click", async () => {
 
 });
 
-
-
 const alignOverlay = document.querySelector('.alignOverlay');
 const alignIcon = document.querySelectorAll('.alignIcon');
 const selectedAlign = document.querySelector('.selectedAlignment');
@@ -94,3 +92,16 @@ emptyIcon.addEventListener('click', () => {
 selectedCharacter.addEventListener('click', () => {
     npcIconOverlay.setAttribute('aria-enabled', true);
 });
+
+
+const randomName = document.querySelector('.randomName');
+
+randomName.addEventListener('click', async () => {
+    const getName = await fetch("/api/users/getRandomName", {
+        method: "GET",
+            // headers: {'Content-Type': 'application/json'}, 
+    })
+    txt = await getName.json();
+    console.log(txt);
+    document.getElementById('randomName').value = txt.message
+})
