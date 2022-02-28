@@ -27,7 +27,7 @@ Npc.init(
       type: DataTypes.TEXT,
       allowNull: false,
     },
-    filename: {
+    icon_id: {
       type: DataTypes.STRING,
       allowNull: false,
     },

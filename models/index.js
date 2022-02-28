@@ -3,12 +3,8 @@ const Npc = require('./Npc');
 const Campaign = require('./Campaign');
 const Location = require('./Location');
 const Organization = require('./Organization');
-
 const Alignment = require('./Alignment');
-const AlignmentImg = require('./AlignmentImg');
-
-const Icon = require('./Organization');
-const Organization = require('./Organization');
+const Icons = require('./Icons');
 
 
 User.hasMany(Campaign, {
@@ -51,7 +47,7 @@ Organization.belongsTo(Campaign, {
 // Icon.belongsTo()
 
 Alignment.belongsTo(Npc, {
-    foreignKey: "alignment"
+    foreignKey: "npc_id"
 });
 
 Npc.hasMany(Alignment, {
@@ -59,13 +55,14 @@ Npc.hasMany(Alignment, {
     onDelete: "CASCADE"
 });
 
-AlignmentImg.belongsTo(Alignment, {
-    foreignKey: "alignment_id"
+Icons.belongsTo(Npc, {
+    foreignKey: "npc_id"
 });
 
-Alignment.hasMany(AlignmentImg, {
-    foreignKey: "alignment_id",
+Npc.hasMany(Icons, {
+    foreignKey: "npc_id",
     onDelete: "CASCADE"
-})
+});
 
-module.exports = { User, Npc, Campaign, Location, Organization, Alignment, AlignmentImg };
+
+module.exports = { User, Npc, Campaign, Location, Organization, Alignment, Icons };
