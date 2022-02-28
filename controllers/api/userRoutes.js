@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const { User, Campaign, Npc } = require('../../models');
+const nameGenerator = require("fantasy-content-generator");
 /* // from original code. I don't think we're using 
 router.post('/', async (req, res) => {
   try {
@@ -181,6 +182,21 @@ router.post('/logout', (req, res) => {
     });
   } else {
     res.status(404).end();
+  }
+});
+
+router.get("/getRandomName", async (req, res) => {
+  try {
+  
+    const name = nameGenerator.Names.generate();
+
+    res.json({message: name.name});
+
+  }
+  catch
+  {
+    console.error(err);
+    res.status(400).json(err);
   }
 });
 
