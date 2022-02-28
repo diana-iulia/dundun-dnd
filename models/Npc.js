@@ -27,6 +27,10 @@ Npc.init(
       type: DataTypes.TEXT,
       allowNull: false,
     },
+    filename: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
     campaign_id: {
       type: DataTypes.INTEGER,
       references: {

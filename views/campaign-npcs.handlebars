@@ -35,21 +35,19 @@
     </section>
 
   <div class="cardSection">
-
     <div class="cardshelf">
-        
         <div class="cardCRUD">
             <div class="add-card topCard">
                 <img src="../../background-images/npc-page/new-npc.png" alt="Quill and Scroll" class="crudIMG">
                 <p class="add">Create Card</p>
-        </div>
+            </div>
             <div class="remove-card topCard">
                 <img src="../../background-images/npc-page/noose.png" alt="Noose" class="crudIMG">
                 <p class="remove">Destroy Card</p>
             </div>
         </div>
 
-        <div class="allCards">{{> npc-card users=users}}</div>
+        <div class="allCards">{{> npc-card npcs=npcs}}</div>
     </div> 
 </div>
 

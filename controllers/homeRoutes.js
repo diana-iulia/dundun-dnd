@@ -106,11 +106,9 @@ router.get('/campaign/:id', async (req, res) => {
     const user = userData.get({ plain: true });
 
 
-
     const campaignData = await Campaign.findByPk(req.params.id);
 
     const campaign = campaignData.get({ plain: true });
-
 
     const npcData = await Npc.findAll({
       where: {
@@ -119,9 +117,7 @@ router.get('/campaign/:id', async (req, res) => {
     });
 
     const npcs = npcData.map((data) => data.get({ plain: true }));
-
-
-
+    console.log(npcs)
 
     res.render('campaign-npcs', {// user data, particular campaign data, all npcs related to campaign
       user,
