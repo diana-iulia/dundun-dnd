@@ -5,6 +5,7 @@ const seedNpc = require('./npcData');
 const seedCampaign = require('./campaignData');
 const seedOrg = require('./orgData');
 const seedLocation = require('./locationData');
+const seedAlignment = require('./alignmentData')
 
 //const userData = require('./userData.js');
 const seedUser = require('./userData.js');

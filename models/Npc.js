@@ -15,8 +15,8 @@ Npc.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    alignment: {
-      type: DataTypes.STRING,
+    alignment_id: {
+      type: DataTypes.INTEGER,
       allowNull: false,
     },
     hp: {
