@@ -15,9 +15,16 @@ Alignment.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    alignmentImg: {
+    alignment_path: {
       type: DataTypes.STRING,
       allowNull: false,
+    },
+    npc_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'npc',
+        key: 'id',
+      },
     },
   },
   {

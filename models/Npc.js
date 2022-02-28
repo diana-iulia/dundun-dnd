@@ -28,7 +28,7 @@ Npc.init(
       allowNull: false,
     },
     icon_id: {
-      type: DataTypes.STRING,
+      type: DataTypes.INTEGER,
       allowNull: false,
     },
     campaign_id: {
