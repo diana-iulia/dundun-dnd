@@ -28,8 +28,18 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
+router.get('/register', (req, res) => {
+  // If the user is already logged in, redirect the request to another route
+  if (req.session.logged_in) {
+    res.redirect('/mycampaigns');
+    return;
+  }
+
+  res.render('register');
+});
+
 // Use withAuth middleware to prevent access to route
-router.get('/mycampaigns', async (req, res) => {
+router.get('/mycampaigns', withAuth, async (req, res) => {
   try {
     /*
     let test = 1;

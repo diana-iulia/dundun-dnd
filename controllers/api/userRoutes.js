@@ -20,12 +20,13 @@ router.post('/', async (req, res) => {
 */
 router.post('/login', async (req, res) => {
   try {
-    const userData = await User.findOne({ where: { email: req.body.email } });
+    
+    const userData = await User.findOne({ where: { name: req.body.name } });
 
     if (!userData) {
       res
         .status(400)
-        .json({ message: 'Incorrect email or password, please try again  asdfasdfadsfasd' });
+        .json({ message: 'Incorrect username or password, please try again' });
       return;
     }
 
@@ -34,7 +35,7 @@ router.post('/login', async (req, res) => {
     if (!validPassword) {
       res
         .status(400)
-        .json({ message: 'Incorrect email or password, please try again' });
+        .json({ message: 'Incorrect username or password, please try again' });
       return;
     }
 
@@ -63,6 +64,7 @@ router.post('/register', async (req, res) => {
       return;
     }
     
+    /*
     const emailNameTest = await User.findOne({ where: { email: req.body.email } });
 
     if (emailNameTest) {
@@ -72,7 +74,16 @@ router.post('/register', async (req, res) => {
       return;
     }
 
-     User.create({
+    */
+
+    if (req.body.password.length < 8) {
+      res
+        .status(400)
+        .json({ message: 'Password is fewer than 8 characters' });
+      return;
+    }
+
+    let newUser = await User.create({
       name: req.body.name,
       email: req.body.email,
       password: req.body.password
@@ -82,18 +93,18 @@ router.post('/register', async (req, res) => {
       returning: true,
     });
 
-    const userData = await (await User.findOne({ where: { name: req.body.name } })).toJSON();
 
-    req.session.user_id = userData.id;
+    req.session.user_id = newUser.id;
     req.session.logged_in = true;
 
     req.session.save(() => {
       
       
-      res.json({ user: userData, message: 'New account \"' + userData.name + "\" was created" });
+      res.json({ user: newUser, message: 'New account \"' + newUser.name+ "\" was created" });
     });
 
   } catch (err) {
+    console.error(err);
     res.status(400).json(err);
   }
 });
