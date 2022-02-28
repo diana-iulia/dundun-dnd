@@ -42,6 +42,28 @@ app.use("/alignment-icons", express.static(path.join(__dirname, 'alignment-icons
 
 app.use(routes);
 
-sequelize.sync({ force: false }).then(() => {
+sequelize.sync({ force: false })
+.then(()=>
+{
+  async function checkTable (){
+    const { Alignment } = require("./models");
+    const { Icons } = require("./models");
+    const seedAlignment = require('./seeds/alignmentData');
+    const seedIcons = require('./seeds/npcIconData');
+
+    let alignments = await Alignment.findAll();
+    let icons = await Icons.findAll();
+
+    if (alignments.length <= 0) {
+      await seedAlignment();
+    }
+
+    if (icons.length <= 0) {
+      await seedIcons();
+    }
+  }
+      checkTable();
+})
+.then(() => {
   app.listen(PORT, () => console.log(`Now listening: http://localhost:${PORT}`));
 });

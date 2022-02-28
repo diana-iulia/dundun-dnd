@@ -5,8 +5,8 @@ const seedNpc = require('./npcData');
 const seedCampaign = require('./campaignData');
 const seedOrg = require('./orgData');
 const seedLocation = require('./locationData');
-const seedAlignment = require('./alignmentData');
-const seedIcons = require('./npcIconData');
+// const seedAlignment = require('./alignmentData');
+// const seedIcons = require('./npcIconData');
 
 //const userData = require('./userData.js');
 const seedUser = require('./userData.js');
@@ -37,8 +37,8 @@ const seedDatabase = async () => {
   //     user_id: users[Math.floor(Math.random() * users.length)].id,
   //   });
   // }
-  await seedAlignment();
-  await seedIcons();
+  // await seedAlignment();
+  // await seedIcons();
   await seedUser();
   await seedCampaign();
   await seedNpc();
