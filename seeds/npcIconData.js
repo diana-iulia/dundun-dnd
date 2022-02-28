@@ -1,9 +1,7 @@
 const { Icons } = require('../models');
 
 const npcIconsData = [
-  {
-    icon_path: "/npc-icons/0"
-  },
+  
   {
     icon_path: "/npc-icons/1"
   },
@@ -153,6 +151,9 @@ const npcIconsData = [
   },
   {
     icon_path: "/npc-icons/50"
+  },
+  {
+    icon_path: "/npc-icons/51"
   },
 ];
 

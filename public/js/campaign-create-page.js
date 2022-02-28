@@ -1,3 +1,30 @@
+// submits new campain data once you click on finish
+document.querySelector(".finish").addEventListener("click", async ()=> {
+
+    const name = document.querySelector(".userCampName").value;
+    const description = document.querySelector(".userBookDesc").value;
+
+    const data = await fetch("/api/users/newCampaign", {
+        method: "POST",
+            headers: {'Content-Type': 'application/json'}, 
+            body: JSON.stringify({
+                name: name,
+                description: description
+            })
+    });
+
+    if (data.ok)
+    {
+        document.location.href = "/mycampaigns";
+    }
+    else
+    {
+        const msg = await data.json();
+        alert(msg.message);
+    }
+
+});
+
 (function () {
 
     var parallax = document.querySelectorAll("body"),
