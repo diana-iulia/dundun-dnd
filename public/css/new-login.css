@@ -21,6 +21,11 @@ body {
     font-family: 'IM Fell Double Pica SC', serif;
 }
 
+a {
+    color: inherit;
+    text-decoration: inherit;
+}
+
 .bookshelf-left, .bookshelf-right {
     width: 20vw;
     height: 100vh;

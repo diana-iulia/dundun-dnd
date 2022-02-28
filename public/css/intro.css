@@ -32,6 +32,11 @@ body {
     align-items: center;
 }
 
+a {
+    color: inherit;
+    text-decoration: inherit;
+}
+
 .introAnimation {
     width: 100%;
     height: 100%;

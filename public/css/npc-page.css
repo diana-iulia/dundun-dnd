@@ -20,6 +20,11 @@ body {
   /* display: none; */
 }
 
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
 .Dimmer {
   width: 100%;
   height: 100vh;
