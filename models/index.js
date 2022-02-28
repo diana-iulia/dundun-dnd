@@ -44,25 +44,23 @@ Organization.belongsTo(Campaign, {
     foreignKey: "campaign_id"
 });
 
-// Icon.belongsTo()
-
 Alignment.belongsTo(Npc, {
     foreignKey: "npc_id"
 });
 
-Npc.hasMany(Alignment, {
-    foreignKey: "npc_id",
-    onDelete: "CASCADE"
-});
+// Npc.hasMany(Alignment, {
+//     foreignKey: "npc_id",
+//     onDelete: "CASCADE"
+// });
 
 Icons.belongsTo(Npc, {
     foreignKey: "npc_id"
 });
 
-Npc.hasMany(Icons, {
-    foreignKey: "npc_id",
-    onDelete: "CASCADE"
-});
+// Npc.hasMany(Icons, {
+//     foreignKey: "npc_id",
+//     onDelete: "CASCADE"
+// });
 
 
 module.exports = { User, Npc, Campaign, Location, Organization, Alignment, Icons };

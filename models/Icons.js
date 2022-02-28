@@ -13,11 +13,17 @@ Icons.init(
     },
     name: {
       type: DataTypes.STRING,
+    },
+    icon_path: {
+      type: DataTypes.STRING,
       allowNull: false,
     },
-    icon_id: {
+    npc_id: {
       type: DataTypes.INTEGER,
-      allowNull: false,
+      references: {
+        model: 'npc',
+        key: 'id',
+      },
     },
   },
   {
