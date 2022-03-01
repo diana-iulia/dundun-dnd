@@ -340,8 +340,6 @@ html {
         display: flex;
         align-items: center;
         justify-content: center;
-        max-height: 40px;
-        max-width: 40px;
       }
 
       .neutral {
@@ -350,8 +348,6 @@ html {
         display: flex;
         align-items: center;
         justify-content: center;
-        max-height: 40px;
-        max-width: 40px;
       }
 
       .evil {
@@ -360,8 +356,6 @@ html {
         display: flex;
         align-items: center;
         justify-content: center;
-        max-height: 40px;
-        max-width: 40px;
       }
 
       .goodGrid {
