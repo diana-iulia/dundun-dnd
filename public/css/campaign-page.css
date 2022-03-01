@@ -503,7 +503,11 @@ a {
     font-weight: 500;
 }
 
-.addCampaign, .removeCampaign {
+.removeCampaign {
+    display: none;
+}
+
+.addCampaign {
     width: 180px;
     aspect-ratio: .69;
     margin: 35px 35px;
