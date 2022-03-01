@@ -94,6 +94,19 @@ selectedCharacter.addEventListener('click', () => {
 });
 
 
+const menuBtn = document.querySelector('.menuBtn');
+const menu = document.querySelector('.menu');
+
+menuBtn.addEventListener('click', () => {
+    var menuStatus = menu.getAttribute('data-visible');
+    if (menuStatus === "false") {
+        menu.setAttribute('data-visible', true);
+    } else {
+        menu.setAttribute('data-visible', false);
+    }
+});
+
+
 const randomName = document.querySelector('.randomName');
 
 randomName.addEventListener('click', async () => {
@@ -105,3 +118,4 @@ randomName.addEventListener('click', async () => {
     console.log(txt);
     document.getElementById('randomName').value = txt.message
 })
+

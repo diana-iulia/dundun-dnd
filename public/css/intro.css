@@ -30,6 +30,11 @@ body {
     overflow: hidden;
     background-color: rgb(0, 0, 0);
     align-items: center;
+    overflow: hidden;
+    background: url('../../background-images/campaign-page/dark-weapons-back.png');
+    /* background-repeat: no-repeat; */
+    background-size: 100vw;
+    background-position: center;
 }
 
 a {
@@ -45,6 +50,20 @@ a {
     z-index: 10000;
     justify-content: center;
     background: transparent;
+    /* animation: introBegone 10s; */
+}
+
+@keyframes introBegone {
+    0% {
+
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        transform: scale(5);
+        opacity: 0;
+    }
 }
 
 .introAnimation[data-visible="false"] {
@@ -140,7 +159,7 @@ a {
     aspect-ratio: 1;
     position: absolute;
     /* top: 55vh; */
-    animation: swordpull 8s ease-in-out, swordHover 3s;
+    animation: swordpull 8s ease-in-out, swordHover 3s infinite;
     animation-delay: 0s, 6s;
 }
 
@@ -226,7 +245,49 @@ a {
     position: absolute;
     opacity: 100%;
     bottom: 0%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     /* animation: rockstart 10s; */
+}
+
+.proceed {
+    transition: font-size 200ms, transform 200ms, opacity 2s, bottom 2s;
+    transition-delay: 0s, 0s, 4s, 4s;
+}
+
+.proceed[data-visible="false"] {
+    color: #8f2222;
+    text-shadow: 0px 0px 5px white;
+    font-family: 'IM Fell Double Pica SC', serif;
+    font-size: 10vw;
+    font-weight: 800;
+    position: absolute;
+    bottom: -100%;
+    cursor: pointer;
+    user-select: none;
+    opacity: 0;
+}
+
+.proceed[data-visible="true"] {
+    color: #8f2222;
+    text-shadow: 0px 0px 5px white;
+    font-family: 'IM Fell Double Pica SC', serif;
+    font-size: 10vw;
+    font-weight: 800;
+    position: absolute;
+    bottom: 0%;
+    cursor: pointer;
+    user-select: none;
+    opacity: 100;
+}
+
+.proceed:hover {
+    font-size: 12vw;
+}
+
+.proceed:active {
+    transform: translateY(2px);
 }
 
 
@@ -647,9 +708,6 @@ a {
     cursor: pointer; 
     transition: border 2s, background-color 250ms;
     user-select: none;
-}
-
-.login {
     width: fit-content;
     height: fit-content;
 }
@@ -664,7 +722,5 @@ a {
 }
 
 .createAccount {
-    width: fit-content;
-    height: fit-content;
     margin-left: 15px;
 }

@@ -40,6 +40,85 @@ html {
       font-family: 'IM Fell Double Pica SC', serif;
   
     }
+
+    .menuBtn {
+      color: #D8D1C7;
+      font-family: 'IM Fell Double Pica SC', serif;
+      font-size: 30px;
+      border-radius: 5px;
+      border: 5px outset #32343d;
+      padding: 5px;
+      background-color: #0e0e0e;
+      cursor: pointer; 
+      transition: border 2s, background-color 250ms;
+      user-select: none;
+      width: fit-content;
+      height: fit-content;
+      /* position: absolute; */
+      margin-right: 5%;
+  }
+  
+  .menuBtn:hover {
+      background-color: #1a1a1a;
+      border: 5px inset #32343d;
+  }
+  
+  .menuBtn:active {
+      transform: translateY(2px);
+  }
+  
+  .menu {
+      transition: right 1s ease-in-out;
+  }
+  
+  .menu[data-visible="true"] {
+      position: fixed;
+      width: min(300px, 100%);
+      height: fit-content;
+      background-color: #0d1724;
+      right: 0;
+      top: 120px;
+      border: 5px outset #32343d;
+      border-radius: 5px;
+      display: flex;
+      justify-content: center;
+      box-shadow: inset 0px 0px 15px black;
+  }
+  
+  .menu[data-visible="false"] {
+      position: fixed;
+      width: min(300px, 100%);
+      height: fit-content;
+      background-color: #0d1724;
+      right: -100%;
+      top: 120px;
+      border: 5px outset #3d3432;
+      border-radius: 5px;
+      display: flex;
+      justify-content: center;
+      box-shadow: inset 0px 0px 15px black;
+  }
+  
+  .optionList {
+      margin: 35px 0px;
+  }
+  
+  .menuOption {
+      color: #D8D1C7;
+      font-size: max(1.5vw, 20px);
+      cursor: pointer;
+      user-select: none;
+      margin-bottom: 30%;
+      transition: border-bottom 200ms, transform 200ms;
+  }
+  
+  .menuOption:hover {
+      border-bottom: 2px solid rgb(0, 0, 0);
+  }
+  
+  .menuOption:active {
+      transform: translateY(2px);
+  }
   
     .column {
       width: 20vw;
@@ -129,11 +208,12 @@ html {
     .npcHeader {
       width: 100%;
       color: #D8D1C7;
-      font-size: 76px;
+      font-size: max(5vw, 50px);
       text-align: center;
-      position: absolute;
+      /* position: absolute; */
       text-shadow: 0px 0px 5px rgb(0, 0, 0);
       /* margin-top: 155px; */
+      margin-right: -10%;
     }
   
     .createSection {
@@ -551,3 +631,61 @@ html {
         box-shadow: inset 0px 0px 5px 2px #000000;
         border: 3px #D8D1C7 outset;
       }
+
+
+
+
+
+@media screen and (max-width: 890px) {
+  .left {
+    left: -15%;
+  }
+  .right {
+    right: -15%;
+  }
+  .sideking, .sideknight, .window {
+    display: none;
+  }
+  .createSection {
+    width: 70%;
+  }
+  .createCard {
+    width: max(50%, 250px);
+  }
+  .header {
+    height: 150px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+  .menuBtn {
+    display: flex;
+    margin-left: 42.5%;
+  }
+  .menu[data-visible="true"] {
+    position: fixed;
+    width: min(300px, 100%);
+    height: fit-content;
+    background-color: #0d1724;
+    right: 0;
+    top: 150px;
+    border: 5px outset #32343d;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    box-shadow: inset 0px 0px 15px black;
+}
+
+.menu[data-visible="false"] {
+    position: fixed;
+    width: min(300px, 100%);
+    height: fit-content;
+    background-color: #0d1724;
+    right: -100%;
+    top: 150px;
+    border: 5px outset #3d3432;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    box-shadow: inset 0px 0px 15px black;
+}
+}

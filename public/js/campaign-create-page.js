@@ -76,3 +76,15 @@ nextArrow.addEventListener('click', () => {
         userBookDesc.setAttribute('data-visible', false);
     }
 });
+
+const menuBtn = document.querySelector('.menuBtn');
+const menu = document.querySelector('.menu');
+
+menuBtn.addEventListener('click', () => {
+    var menuStatus = menu.getAttribute('data-visible');
+    if (menuStatus === "false") {
+        menu.setAttribute('data-visible', true);
+    } else {
+        menu.setAttribute('data-visible', false);
+    }
+});

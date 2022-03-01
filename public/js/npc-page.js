@@ -27,15 +27,15 @@ const egg = document.querySelector('.egg');
     };
 })();
 
-var ran50 = Math.floor(Math.random() * 51);
+// var ran50 = Math.floor(Math.random() * 51);
 
-console.log(ran50);
+// console.log(ran50);
 
-const knight = document.querySelectorAll('.knight')
+// const knight = document.querySelectorAll('.knight')
 
-for (i=0; i<knight.length; i++) {
-    knight[i].setAttribute('src', '../../npc-icons/' + Math.floor(Math.random() * 51) + '.png')
-}
+// for (i=0; i<knight.length; i++) {
+//     knight[i].setAttribute('src', '../../npc-icons/' + Math.floor(Math.random() * 51) + '.png')
+// }
 
 
 
@@ -67,5 +67,17 @@ dimmer.addEventListener('click', () => {
             npcCard[i].classList.remove('cardSelected');
             dimmer.classList.remove('Dimmer');
         }
+    }
+});
+
+const menuBtn = document.querySelector('.menuBtn');
+const menu = document.querySelector('.menu');
+
+menuBtn.addEventListener('click', () => {
+    var menuStatus = menu.getAttribute('data-visible');
+    if (menuStatus === "false") {
+        menu.setAttribute('data-visible', true);
+    } else {
+        menu.setAttribute('data-visible', false);
     }
 });
