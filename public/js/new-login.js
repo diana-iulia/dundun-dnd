@@ -44,3 +44,16 @@ const onSubmit = async () => {
 }
 
 document.getElementsByClassName("finalize")[0].addEventListener("click", onSubmit);
+
+
+const menuBtn = document.querySelector('.menuBtn');
+const menu = document.querySelector('.menu');
+
+menuBtn.addEventListener('click', () => {
+    var menuStatus = menu.getAttribute('data-visible');
+    if (menuStatus === "false") {
+        menu.setAttribute('data-visible', true);
+    } else {
+        menu.setAttribute('data-visible', false);
+    }
+});

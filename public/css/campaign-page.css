@@ -1,4 +1,29 @@
-
+::-webkit-scrollbar {
+    width: .5em;
+    padding-left: 10px;
+    height: 1rem;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #7e7a74;
+    margin-top: auto;
+  }
+  
+  ::-webkit-scrollbar-track:hover {
+    box-shadow: inset 0px 0px 10px #909090;
+    cursor: pointer;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #3d3b39;
+    border: 2px solid #7e7a74;
+    /* border-radius: 100vh; */
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    box-shadow: inset 0px 0px 5px var(--blueGlow);
+    cursor: pointer;
+  }
   
 html {
     height: 100%;
@@ -29,6 +54,85 @@ body {
     justify-content: center;
     align-items: center;
     font-family: 'IM Fell Double Pica SC', serif;
+}
+
+.menuBtn {
+    color: #D8D1C7;
+    font-family: 'IM Fell Double Pica SC', serif;
+    font-size: 30px;
+    border-radius: 5px;
+    border: 5px outset #3d3432;
+    padding: 5px;
+    background-color: #0e0e0e;
+    cursor: pointer; 
+    transition: border 2s, background-color 250ms;
+    user-select: none;
+    width: fit-content;
+    height: fit-content;
+    position: absolute;
+    right: 5%;
+}
+
+.menuBtn:hover {
+    background-color: #1a1a1a;
+    border: 5px inset #3d3432;
+}
+
+.menuBtn:active {
+    transform: translateY(2px);
+}
+
+.menu {
+    transition: right 1s ease-in-out;
+}
+
+.menu[data-visible="true"] {
+    position: fixed;
+    width: min(300px, 100%);
+    height: fit-content;
+    background-color: #240d0d;
+    right: 0;
+    top: 120px;
+    border: 5px outset #3d3432;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    box-shadow: inset 0px 0px 15px black;
+}
+
+.menu[data-visible="false"] {
+    position: fixed;
+    width: min(300px, 100%);
+    height: fit-content;
+    background-color: #240d0d;
+    right: -100%;
+    top: 120px;
+    border: 5px outset #3d3432;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    box-shadow: inset 0px 0px 15px black;
+}
+
+.optionList {
+    margin: 35px 0px;
+}
+
+.menuOption {
+    color: #D8D1C7;
+    font-size: max(1.5vw, 20px);
+    cursor: pointer;
+    user-select: none;
+    margin-bottom: 30%;
+    transition: border-bottom 200ms, transform 200ms;
+}
+
+.menuOption:hover {
+    border-bottom: 2px solid rgb(0, 0, 0);
+}
+
+.menuOption:active {
+    transform: translateY(2px);
 }
 
 .bookshelf-left, .bookshelf-right {
