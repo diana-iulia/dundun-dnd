@@ -76,6 +76,7 @@ body {
     z-index: 9999;
     display: flex;
     align-items: center;
+    justify-content: center;
     font-family: 'IM Fell Double Pica SC', serif;
 
   }
@@ -733,9 +734,12 @@ body {
       align-items: flex-start;
       flex-wrap: wrap;
     }
+    .npcHeader {
+      margin-right: 5%;
+    }
     .menuBtn {
       display: flex;
-      margin-left: 42.5%;
+      margin-left: 5%;
     }
     .menu[data-visible="true"] {
       position: fixed;
