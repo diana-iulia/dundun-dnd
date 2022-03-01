@@ -119,3 +119,11 @@ randomName.addEventListener('click', async () => {
     document.getElementById('randomName').value = txt.message
 })
 
+const logout = document.querySelector('.logout');
+
+logout.addEventListener('click', async () => {
+    fetch('/api/users/logout', {
+        method: "POST",
+    })
+    document.location.href = "/login";
+});

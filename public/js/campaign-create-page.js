@@ -88,3 +88,12 @@ menuBtn.addEventListener('click', () => {
         menu.setAttribute('data-visible', false);
     }
 });
+
+const logout = document.querySelector('.logout');
+
+logout.addEventListener('click', async () => {
+    fetch('/api/users/logout', {
+        method: "POST",
+    })
+    document.location.href = "/login";
+});
