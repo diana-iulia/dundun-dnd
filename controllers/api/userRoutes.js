@@ -1,5 +1,6 @@
 const router = require('express').Router();
-const { User } = require('../../models');
+const { User, Campaign, Npc } = require('../../models');
+const nameGenerator = require("fantasy-content-generator");
 /* // from original code. I don't think we're using 
 router.post('/', async (req, res) => {
   try {
@@ -18,6 +19,71 @@ router.post('/', async (req, res) => {
   }
 });
 */
+router.post("/newNPC", async (req, res) => {
+  try {
+    const npcData = Npc.findOne({ where: { name: req.body.name } });
+
+    if (npcData && npcData.campaign_id === req.body.campaign_id)
+    {
+      res
+        .status(400)
+        .json({ message: 'You already have an NPC with that name' });
+      return;
+    }
+
+    let newNPC = await Npc.create({
+      name: req.body.name,
+      alignment_id: req.body.alignment_id,
+      hp: req.body.hp,
+      description: req.body.description,
+      campaign_id: req.body.campaign_id,
+      icon_id: req.body.icon_id
+    },
+    {
+      individualHooks: true,
+      returning: true,
+    });
+
+    res.json({ message: 'New NPC is created' });
+  }
+  catch (err)
+  {
+    console.log(err);
+    res.status(400).json(err);
+  }
+});
+
+router.post("/newCampaign", async (req, res) => {
+  try {
+    const campaignData = Campaign.findOne({ where: { name: req.body.name } });
+
+    if (campaignData && campaignData.user_id === req.session.user_id)
+    {
+      res
+        .status(400)
+        .json({ message: 'You already have a campaign with that name' });
+      return;
+    }
+
+    let newCampaign = await Campaign.create({
+      name: req.body.name,
+      description: req.body.description,
+      user_id: req.session.user_id
+    },
+    {
+      individualHooks: true,
+      returning: true,
+    });
+
+    res.json({ message: 'New Campaign is created' });
+  }
+  catch (err)
+  {
+    console.log(err);
+    res.status(400).json(err);
+  }
+});
+
 router.post('/login', async (req, res) => {
   try {
     
@@ -116,6 +182,21 @@ router.post('/logout', (req, res) => {
     });
   } else {
     res.status(404).end();
+  }
+});
+
+router.get("/getRandomName", async (req, res) => {
+  try {
+  
+    const name = nameGenerator.Names.generate();
+
+    res.json({message: name.name});
+
+  }
+  catch
+  {
+    console.error(err);
+    res.status(400).json(err);
   }
 });
 

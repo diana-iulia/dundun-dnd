@@ -72,10 +72,10 @@ router.get('/mycampaigns', withAuth, async (req, res) => {
     console.log("test " + test++);
 */
 
-    let user = await (await User.findByPk(1)).toJSON();
+    let user = await (await User.findByPk(req.session.user_id)).toJSON();
     
 
-    let campaigns = await (await Campaign.findAll({where: { user_id: 1}})).map((e) => e.toJSON());
+    let campaigns = await (await Campaign.findAll({where: { user_id: req.session.user_id}})).map((e) => e.toJSON());
     console.log(campaigns);
 
     res.render('allcampaigns', { //TODO: pass in user data and campaigns that belong to user
@@ -95,7 +95,7 @@ router.get('/campaigns/new', withAuth, async (req, res) => {
     
 
     res.render('newcampaign', {
-      ...user,
+      
       logged_in: true
     });
   } catch (err) {
@@ -104,7 +104,7 @@ router.get('/campaigns/new', withAuth, async (req, res) => {
 });
 
 // Use withAuth middleware to prevent access to route
-router.get('/campaign/:id', async (req, res) => {
+router.get('/campaign/:id', withAuth , async (req, res) => {
   try {
 
     // Find the logged in user based on the session ID
@@ -126,7 +126,11 @@ router.get('/campaign/:id', async (req, res) => {
       }
     });
 
-    const npcs = npcData.map((data) => data.get({ plain: true }));
+    let npcs = []
+
+    if (npcData.length > 0)
+      npcs = npcData.map((data) => data.get({ plain: true }));
+    
     console.log(npcs)
 
     res.render('campaign-npcs', {// user data, particular campaign data, all npcs related to campaign
@@ -156,8 +160,7 @@ router.get('/campaign/:id/add', withAuth, async (req, res) => {
 
     const user = userData.get({ plain: true });
 
-    res.render(' TO DO ADD MY HANLDEBARS FILE ', {
-      ...user,
+    res.render('npc-create-page', {
       logged_in: true
     });
   } catch (err) {

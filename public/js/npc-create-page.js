@@ -1,3 +1,46 @@
+// sending a fetch request when the finalize button is hit
+document.querySelector(".createNPC").addEventListener("click", async () => {
+
+
+
+    const icon_path = document.querySelector(".selectedCharacter").getAttribute("src")
+
+
+    const name = document.querySelector(".userNPCName").value;
+    const alignment_id = 1;
+    const hp = document.querySelector(".userNPCHp").value;
+    const description = document.querySelector(".userNPCDesc").value;
+    const campaign_id =  window.location.pathname.split('/')[2] ; 
+    console.log( campaign_id);
+
+    const icon_id = icon_path.substring(11,icon_path.length-4);
+
+
+    const data = await fetch("/api/users/newNPC", {
+        method: "POST",
+            headers: {'Content-Type': 'application/json'}, 
+            body: JSON.stringify({
+                name: name,
+                alignment_id: alignment_id,
+                hp: hp,
+                description: description,
+                campaign_id: campaign_id,
+                icon_id: icon_id
+            })
+    });
+
+    if (data.ok)
+    {
+        document.location.href = "/campaign/" + campaign_id;
+    }
+    else
+    {
+        const msg = await data.json();
+        alert(msg.message);
+    }
+
+});
+
 const alignOverlay = document.querySelector('.alignOverlay');
 const alignIcon = document.querySelectorAll('.alignIcon');
 const selectedAlign = document.querySelector('.selectedAlignment');
@@ -50,6 +93,7 @@ selectedCharacter.addEventListener('click', () => {
     npcIconOverlay.setAttribute('aria-enabled', true);
 });
 
+
 const menuBtn = document.querySelector('.menuBtn');
 const menu = document.querySelector('.menu');
 
@@ -61,3 +105,17 @@ menuBtn.addEventListener('click', () => {
         menu.setAttribute('data-visible', false);
     }
 });
+
+
+const randomName = document.querySelector('.randomName');
+
+randomName.addEventListener('click', async () => {
+    const getName = await fetch("/api/users/getRandomName", {
+        method: "GET",
+            // headers: {'Content-Type': 'application/json'}, 
+    })
+    txt = await getName.json();
+    console.log(txt);
+    document.getElementById('randomName').value = txt.message
+})
+
