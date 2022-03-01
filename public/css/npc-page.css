@@ -575,6 +575,11 @@ body {
     background-color: #121212;
   }
 
+  .alignIcon img { 
+    width: 100%;
+    height: 100%;
+  }
+
   .npcHp {
     font-size: .8vw;
     font-weight: 700;
