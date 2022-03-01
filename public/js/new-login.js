@@ -10,6 +10,7 @@ const onSubmit = async () => {
     catch{}
 
     let name = document.getElementsByClassName("userName")[0].value;
+    let email = document.getElementsByClassName("userEmailForm")[0].value;
     let password = document.getElementsByClassName("userPassword")[0].value;
 
     try {
@@ -18,7 +19,7 @@ const onSubmit = async () => {
             headers: {'Content-Type': 'application/json'}, 
             body: JSON.stringify({
                 name: name,
-                email: name + "@gmail.com",
+                email: email,
                 password: password 
             })
         });
