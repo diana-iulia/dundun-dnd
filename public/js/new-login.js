@@ -10,8 +10,10 @@ const onSubmit = async () => {
     catch{}
 
     let name = document.getElementsByClassName("userName")[0].value;
-    let email = document.getElementsByClassName("userEmailForm")[0].value;
+    let email = document.getElementsByClassName("userEmail")[0].value;
     let password = document.getElementsByClassName("userPassword")[0].value;
+
+    console.log(email);
 
     try {
         let req = await fetch("/api/users/register",{

@@ -130,7 +130,7 @@ router.post('/register', async (req, res) => {
       return;
     }
     
-    /*
+    
     const emailNameTest = await User.findOne({ where: { email: req.body.email } });
 
     if (emailNameTest) {
@@ -140,7 +140,7 @@ router.post('/register', async (req, res) => {
       return;
     }
 
-    */
+    
 
     if (req.body.password.length < 8) {
       res
