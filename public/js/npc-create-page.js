@@ -3,15 +3,17 @@ document.querySelector(".createNPC").addEventListener("click", async () => {
 
 
 
-    const icon_path = document.querySelector(".selectedCharacter").getAttribute("src")
-
+    const icon_path = document.querySelector(".selectedCharacter").getAttribute("src");
+    const alignment_path = document.querySelector(".selectedAlignment").getAttribute("src");
 
     const name = document.querySelector(".userNPCName").value;
-    const alignment_id = 1;
+    const alignment_id = alignment_path.substring( 17 , alignment_path.length-4 ); //"/alignment-icons/5.jpg"
     const hp = document.querySelector(".userNPCHp").value;
     const description = document.querySelector(".userNPCDesc").value;
     const campaign_id =  window.location.pathname.split('/')[2] ; 
-    console.log( campaign_id);
+    console.log( alignment_path);
+    console.log( alignment_id);
+    
 
     const icon_id = icon_path.substring(11,icon_path.length-4);
 
