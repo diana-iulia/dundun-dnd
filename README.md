@@ -21,7 +21,14 @@
 
 DND NPC Tracker is a Dungeon Master's best friend. The user can quickly and easily navigate through a list of NPCs respective to their selected campaign, and also add/remove both NPCs no longer used, and campaigns that are no longer active. Future development of this application may include a primitive dungeon generator, an NPC randomizer, and a variety of helpful features.  
 
----
+<img width="1569" alt="Screen Shot 2022-04-29 at 12 18 21 AM" src="https://user-images.githubusercontent.com/43100954/165901931-ec388195-553e-42da-8b6d-2423faed17e0.png">
+<img width="1569" alt="Screen Shot 2022-04-29 at 12 24 02 AM" src="https://user-images.githubusercontent.com/43100954/165901938-870f27ed-ef6e-4542-bd1e-a29fbe878c96.png">
+<img width="1572" alt="Screen Shot 2022-04-29 at 12 26 15 AM" src="https://user-images.githubusercontent.com/43100954/165901947-d51eb872-bd32-47a5-9cfd-283b1ec47a5b.png">
+
+
+## Demo
+
+https://npc-track.herokuapp.com/
 
 ## User Story
 
